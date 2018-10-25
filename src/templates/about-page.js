@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content
+  const PageContent = contentComponent || Content;
 
   return (
     <section className="section section--gradient">
@@ -16,6 +16,17 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
               <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
                 {title}
               </h2>
+              <form name="contact" netlify>
+                <p>
+                  <label>Name <input type="text" name="name" /></label>
+                </p>
+                <p>
+                  <label>Email <input type="email" name="email" /></label>
+                </p>
+                <p>
+                  <button type="submit">Send</button>
+                </p>
+              </form>
               <PageContent className="content" content={content} />
             </div>
           </div>
